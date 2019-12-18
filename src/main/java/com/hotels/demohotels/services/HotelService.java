@@ -18,6 +18,7 @@ public class HotelService {
 
     public List<HotelDto> getHotelByCityId(Integer cityId) {
         return hotelRepository.findByCityId(cityId).stream().map(hotel -> HotelDto.builder()
+                .id(hotel.getId())
                 .city_id(hotel.getCityId())
                 .name(hotel.getName())
                 .status(hotel.getStatus())
